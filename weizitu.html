@@ -157,8 +157,6 @@
 
     <!--引入高德地图JSAPI -->
     <script type="text/javascript" src="https://webapi.amap.com/maps?v=1.4.15&key=98a9b1aede875554fc1957f1026b327a"></script>
-    <!--引入DistrictExplorer插件-->
-    <script src="https://webapi.amap.com/ui/1.1/main.js"></script>
     <script type="text/javascript">
         // 初始化地图
         function initMap() {
@@ -189,7 +187,8 @@
             var marker = new AMap.Marker({
                 position: new AMap.LngLat(118.553578,24.86738), // 泉州经济技术开发区社区卫生服务中心准确位置
                 title: '泉州经济技术开发区社区卫生服务中心',
-                icon: '//a.amap.com/jsapi_demos/static/demo-center/icons/poi-marker-default.png'
+                icon: '//a.amap.com/jsapi_demos/static/demo-center/icons/poi-marker-default.png',
+                offset: new AMap.Pixel(-6, -16) // 调整锚点位置为图标底边中心位置
             });
 
             // 添加标记点到地图
@@ -199,47 +198,6 @@
             // 绑定点击事件
             marker.on('click', function() {
                 infoWindow.open(map, marker.getPosition());
-            });
-
-            // 默认打开信息窗口
-            infoWindow.open(map, marker.getPosition());
-
-            // 加载DistrictExplorer插件
-            AMapUI.load(['ui/geo/DistrictExplorer'], function(DistrictExplorer) {
-                // 创建行政区划浏览对象
-                var districtExplorer = new DistrictExplorer({
-                    eventSupport: true, // 打开事件支持
-                    map: map
-                });
-                
-                // 搜索并绘制晋江市
-                districtExplorer.loadAreaNodeByName('晋江市', function(error, areaNode) {
-                    console.log('加载晋江市结果:', error, areaNode);
-                    if (error) {
-                        console.error('加载晋江市失败:', error);
-                        return;
-                    }
-                    
-                    if (!areaNode) {
-                        console.error('未找到晋江市区域数据');
-                        return;
-                    }
-                    
-                    // 获取区域信息
-                    var adcode = areaNode.getAdcode();
-                    var name = areaNode.getName();
-                    console.log('区域信息:', adcode, name);
-                    
-                    // 渲染区域
-                    districtExplorer.setAreaNodesForCurrentZoom([areaNode]);
-                    districtExplorer.renderAreaPolygons();
-                    
-                    // 高亮显示晋江市
-                    districtExplorer.setFillOpacity(0.2);
-                    districtExplorer.setStrokeWeight(2);
-                    districtExplorer.setStrokeColor('#32CD32');
-                    districtExplorer.setFillColor('#32CD32');
-                });
             });
         }
 
