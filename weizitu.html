@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>泉州经济技术开发区卫生服务中心位置图</title>
+    <title>泉州经济技术开发区社区卫生服务中心位置图</title>
     <style>
         body {
             font-family: "Microsoft YaHei", sans-serif;
@@ -116,17 +116,17 @@
 </head>
 <body>
     <div class="header">
-        <h1>泉州经济技术开发区卫生服务中心位置图</h1>
+        <h1>泉州经济技术开发区社区卫生服务中心位置图</h1>
         <div class="subtitle">基于高德地图API的位置展示</div>
     </div>
 
     <div class="content">
         <div class="instructions">
             <h3>使用说明</h3>
-            <p>本地图基于高德地图API开发，显示泉州经济技术开发区卫生服务中心的具体位置。</p>
+            <p>本地图基于高德地图API开发，显示泉州经济技术开发区社区卫生服务中心的具体位置。</p>
             <p>功能说明：</p>
             <ul>
-                <li>地图中心点为泉州经济技术开发区卫生服务中心</li>
+                <li>地图中心点为泉州经济技术开发区社区卫生服务中心</li>
                 <li>支持鼠标滚轮缩放地图</li>
                 <li>支持拖拽移动地图</li>
                 <li>点击标记可查看位置信息</li>
@@ -154,8 +154,9 @@
 
         <div class="note">
             <h4>位置信息</h4>
-            <p><strong>泉州经济技术开发区卫生服务中心</strong></p>
-            <p>地址：福建省泉州市经济技术开发区</p>
+            <p><strong>泉州经济技术开发区社区卫生服务中心</strong></p>
+            <p>地址：福建省泉州市晋江市池店镇泉州经济技术开发区吉泰路234号附近</p>
+            <p>电话：0595-28202030</p>
             <p>服务内容：提供基本医疗、预防保健、健康教育等公共卫生服务</p>
         </div>
     </div>
@@ -173,8 +174,8 @@
         function initMap() {
             // 创建地图实例
             var map = new AMap.Map('container', {
-                zoom: 11, // 调整缩放级别以更好地显示区域
-                center: [118.587, 24.801], // 设置地图中心点坐标
+                zoom: 15, // 调整缩放级别以更好地显示区域
+                center: [118.544778, 24.910833], // 泉州经济技术开发区社区卫生服务中心准确位置
                 mapStyle: 'amap://styles/normal' // 设置地图样式
             });
 
@@ -196,8 +197,8 @@
 
             // 添加标记点
             var marker = new AMap.Marker({
-                position: new AMap.LngLat(118.587, 24.801), // 经纬度对象
-                title: '泉州经济技术开发区卫生服务中心',
+                position: new AMap.LngLat(118.544778, 24.910833), // 泉州经济技术开发区社区卫生服务中心准确位置
+                title: '泉州经济技术开发区社区卫生服务中心',
                 icon: '//a.amap.com/jsapi_demos/static/demo-center/icons/poi-marker-default.png',
                 offset: new AMap.Pixel(-13, -30)
             });
@@ -208,8 +209,9 @@
             // 添加信息窗口
             var infoWindow = new AMap.InfoWindow({
                 content: '<div style="padding: 5px;">' +
-                         '<h4 style="margin: 0;">泉州经济技术开发区卫生服务中心</h4>' +
-                         '<p style="margin: 5px 0;">地址：福建省泉州市经济技术开发区</p>' +
+                         '<h4 style="margin: 0;">泉州经济技术开发区社区卫生服务中心</h4>' +
+                         '<p style="margin: 5px 0;">地址：福建省泉州市晋江市池店镇泉州经济技术开发区吉泰路234号附近</p>' +
+                         '<p style="margin: 5px 0;">电话：0595-28202030</p>' +
                          '<p style="margin: 5px 0;">服务时间：8:00-18:00</p>' +
                          '</div>',
                 offset: new AMap.Pixel(0, -30)
