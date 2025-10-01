@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>地球仪展开图模板</title>
+    <style>
+        body {
+            font-family: "Microsoft YaHei", sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .header {
+            text-align: center;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        h1 {
+            margin: 0;
+            font-size: 2em;
+        }
+        .subtitle {
+            font-size: 1.2em;
+            margin-top: 10px;
+        }
+        .content {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .instructions {
+            background: #e3f2fd;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            border-left: 4px solid #2196f3;
+        }
+        .specifications {
+            background: #e8f5e9;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            border-left: 4px solid #4caf50;
+        }
+        .diagram-container {
+            text-align: center;
+            margin: 30px 0;
+        }
+        .diagram {
+            display: inline-block;
+            border: 1px solid #ccc;
+            background: white;
+            padding: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        th, td {
+            padding: 10px;
+            text-align: center;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .note {
+            background: #fff3e0;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 15px;
+            border-left: 4px solid #ff9800;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            color: #666;
+            font-size: 0.9em;
+        }
+        canvas {
+            border: 1px solid #eee;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>地球仪展开图模板</h1>
+        <div class="subtitle">适用于周长为44.5cm的泡沫球</div>
+    </div>
+
+    <div class="content">
+        <div class="instructions">
+            <h3>制作说明</h3>
+            <p>本模板是为周长为44.5cm的球形泡沫球设计的地球仪展开图，按照15度经度间隔绘制。</p>
+            <p>使用方法：</p>
+            <ol>
+                <li>将本页面打印在A4纸上（建议使用较厚的纸张）</li>
+                <li>沿着轮廓线小心剪下展开图</li>
+                <li>将剪下的图案粘贴到泡沫球上</li>
+                <li>根据需要添加纬线、经线标注和地理标识</li>
+            </ol>
+        </div>
+
+        <div class="specifications">
+            <h3>技术参数</h3>
+            <table>
+                <tr>
+                    <th>参数</th>
+                    <th>数值</th>
+                    <th>说明</th>
+                </tr>
+                <tr>
+                    <td>球体周长</td>
+                    <td>44.5 cm</td>
+                    <td>沿最大圆周测量</td>
+                </tr>
+                <tr>
+                    <td>球体直径</td>
+                    <td>14.17 cm</td>
+                    <td>周长/π计算得出</td>
+                </tr>
+                <tr>
+                    <td>经度间隔</td>
+                    <td>15°</td>
+                    <td>共24条经线</td>
+                </tr>
+                <tr>
+                    <td>纬度间隔</td>
+                    <td>15°</td>
+                    <td>共13条纬线</td>
+                </tr>
+                <tr>
+                    <td>展开图类型</td>
+                    <td>纺锤形</td>
+                    <td>适合球体粘贴</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="diagram-container">
+            <h3>地球仪展开图（纺锤形）</h3>
+            <p>请将以下图形打印并剪下，粘贴到您的泡沫球上</p>
+            <div class="diagram">
+                <canvas id="earthMap" width="800" height="300"></canvas>
+            </div>
+        </div>
+
+        <div class="note">
+            <h3>使用提示</h3>
+            <ul>
+                <li>打印时请选择"实际大小"或"100%"比例，确保尺寸准确</li>
+                <li>建议使用厚纸或卡纸打印，便于剪裁和粘贴</li>
+                <li>剪裁时请沿外轮廓线剪下，保留所有经线和纬线</li>
+                <li>粘贴时从中心开始，逐渐向两端贴合，避免产生气泡</li>
+                <li>可先在纸上练习粘贴，熟悉方法后再正式操作</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="footer">
+        祝您制作成功！
+    </div>
+
+    <script>
+        window.onload = function() {
+            const canvas = document.getElementById('earthMap');
+            const ctx = canvas.getContext('2d');
+            
+            // 设置画布尺寸和比例
+            const width = canvas.width;
+            const height = canvas.height;
+            
+            // 根据44.5cm周长计算相关参数
+            // 画布上44.5cm对应约800像素
+            const pixelsPerCm = width / 44.5;
+            const diameterPixels = 14.17 * pixelsPerCm; // 直径14.17cm
+            
+            // 绘制标题
+            ctx.font = "16px Microsoft YaHei";
+            ctx.textAlign = "center";
+            ctx.fillText("地球仪展开图 (15°间隔) - 纺锤形", width/2, 20);
+            
+            // 绘制说明文字
+            ctx.font = "12px Microsoft YaHei";
+            ctx.fillText("请沿外轮廓剪下并粘贴到周长为44.5cm的泡沫球上", width/2, 40);
+            
+            // 绘制纺锤形轮廓（模拟球体展开效果）
+            ctx.beginPath();
+            ctx.moveTo(50, height/2);
+            
+            // 绘制上半部分纺锤形曲线
+            for (let i = 0; i <= 12; i++) {
+                const x = 50 + i * (width-100) / 12;
+                // 使用正弦函数模拟球体曲率
+                const y = height/2 - Math.sin(i * Math.PI / 12) * (height/2 - 60);
+                if (i === 0) {
+                    ctx.moveTo(x, y);
+                } else {
+                    ctx.lineTo(x, y);
+                }
+            }
+            
+            // 绘制下半部分纺锤形曲线
+            for (let i = 12; i >= 0; i--) {
+                const x = 50 + i * (width-100) / 12;
+                // 使用正弦函数模拟球体曲率
+                const y = height/2 + Math.sin(i * Math.PI / 12) * (height/2 - 60);
+                ctx.lineTo(x, y);
+            }
+            
+            ctx.closePath();
+            ctx.stroke();
+            
+            // 绘制经线 (15°间隔，共24条)
+            for (let i = 0; i <= 24; i++) {
+                ctx.beginPath();
+                const step = (width-100) / 24;
+                const x = 50 + i * step;
+                
+                // 计算该经线在纺锤形上的上下点
+                let topY, bottomY;
+                if (i <= 12) {
+                    const ratio = i / 12;
+                    topY = height/2 - Math.sin(ratio * Math.PI) * (height/2 - 60);
+                    bottomY = height/2 + Math.sin(ratio * Math.PI) * (height/2 - 60);
+                } else {
+                    const ratio = (24 - i) / 12;
+                    topY = height/2 - Math.sin(ratio * Math.PI) * (height/2 - 60);
+                    bottomY = height/2 + Math.sin(ratio * Math.PI) * (height/2 - 60);
+                }
+                
+                ctx.moveTo(x, topY);
+                ctx.lineTo(x, bottomY);
+                ctx.stroke();
+            }
+            
+            // 绘制纬线 (15°间隔，共13条)
+            for (let i = 0; i <= 12; i++) {
+                ctx.beginPath();
+                const ratio = i / 12;
+                const y = height/2 - Math.cos(ratio * Math.PI) * (height/2 - 60);
+                
+                // 纬线长度根据纬度变化（赤道最长，向两极变短）
+                const latFactor = Math.cos((i - 6) * Math.PI / 12); // 从-90°到+90°
+                const lineWidth = (width - 100) * Math.abs(latFactor);
+                const startX = (width - lineWidth) / 2;
+                const endX = startX + lineWidth;
+                
+                ctx.moveTo(startX, y);
+                ctx.lineTo(endX, y);
+                ctx.stroke();
+            }
+            
+            // 添加标注
+            ctx.font = "10px Microsoft YaHei";
+            ctx.textAlign = "center";
+            
+            // 标注经度
+            for (let i = 0; i <= 24; i++) {
+                const step = (width-100) / 24;
+                const x = 50 + i * step;
+                const longitude = i * 15;
+                ctx.fillText(longitude + "°", x, 55);
+            }
+            
+            // 标注纬度
+            ctx.textAlign = "right";
+            for (let i = 0; i <= 12; i++) {
+                const ratio = i / 12;
+                const y = height/2 - Math.cos(ratio * Math.PI) * (height/2 - 60);
+                const latitude = 90 - i * 15;
+                ctx.fillText(latitude + "°", 45, y + 3);
+            }
+            
+            // 标注重要纬线名称
+            ctx.textAlign = "left";
+            ctx.fillText("北极", width-45, 65);
+            ctx.fillText("北极圈", width-45, height/2 - Math.cos(3 * Math.PI / 12) * (height/2 - 60) + 3);
+            ctx.fillText("北回归线", width-45, height/2 - Math.cos(5 * Math.PI / 12) * (height/2 - 60) + 3);
+            ctx.fillText("赤道", width-45, height/2 + 3);
+            ctx.fillText("南回归线", width-45, height/2 + Math.cos(5 * Math.PI / 12) * (height/2 - 60) + 3);
+            ctx.fillText("南极圈", width-45, height/2 + Math.cos(3 * Math.PI / 12) * (height/2 - 60) + 3);
+            ctx.fillText("南极", width-45, height-65);
+            
+            // 添加使用说明
+            ctx.textAlign = "center";
+            ctx.font = "12px Microsoft YaHei";
+            ctx.fillText("虚线表示经线，实线表示纬线", width/2, height-30);
+            ctx.fillText("经线间隔: 15°    纬线间隔: 15°", width/2, height-15);
+        };
+    </script>
+</body>
+</html>

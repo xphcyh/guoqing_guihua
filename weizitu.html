@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>泉州经济技术开发区卫生服务中心位置图</title>
+    <style>
+        body {
+            font-family: "Microsoft YaHei", sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .header {
+            text-align: center;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        h1 {
+            margin: 0;
+            font-size: 2em;
+        }
+        .subtitle {
+            font-size: 1.2em;
+            margin-top: 10px;
+        }
+        .content {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        #container {
+            width: 100%;
+            height: 500px;
+            position: relative;
+        }
+        .instructions {
+            background: #e3f2fd;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px 0;
+            border-left: 4px solid #2196f3;
+        }
+        .note {
+            background: #fff3e0;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 15px;
+            border-left: 4px solid #ff9800;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            color: #666;
+            font-size: 0.9em;
+        }
+        .legend {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 0 5px rgba(0,0,0,0.3);
+            z-index: 10;
+            font-size: 12px;
+            max-width: 200px;
+        }
+        .legend-title {
+            font-weight: bold;
+            margin-bottom: 5px;
+            text-align: center;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 3px;
+        }
+        .legend-item {
+            display: flex;
+            align-items: center;
+            margin: 5px 0;
+        }
+        .legend-symbol {
+            width: 20px;
+            height: 15px;
+            margin-right: 8px;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        .line-solid-green {
+            border-top: 2px solid #32CD32;
+        }
+        .line-dashed-blue {
+            border-top: 2px dashed #1791fc;
+        }
+        .fill-green {
+            background-color: rgba(50, 205, 50, 0.2);
+            border: 1px solid #32CD32;
+        }
+        .marker-icon {
+            background-image: url('//a.amap.com/jsapi_demos/static/demo-center/icons/poi-marker-default.png');
+            background-size: cover;
+            width: 16px;
+            height: 22px;
+            margin-right: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>泉州经济技术开发区卫生服务中心位置图</h1>
+        <div class="subtitle">基于高德地图API的位置展示</div>
+    </div>
+
+    <div class="content">
+        <div class="instructions">
+            <h3>使用说明</h3>
+            <p>本地图基于高德地图API开发，显示泉州经济技术开发区卫生服务中心的具体位置。</p>
+            <p>功能说明：</p>
+            <ul>
+                <li>地图中心点为泉州经济技术开发区卫生服务中心</li>
+                <li>支持鼠标滚轮缩放地图</li>
+                <li>支持拖拽移动地图</li>
+                <li>点击标记可查看位置信息</li>
+                <li>高亮显示晋江市行政区域</li>
+            </ul>
+        </div>
+
+        <div id="container">
+            <div class="legend">
+                <div class="legend-title">图例</div>
+                <div class="legend-item">
+                    <div class="legend-symbol marker-icon"></div>
+                    <div>卫生服务中心</div>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-symbol fill-green"></div>
+                    <div>晋江市行政区域</div>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-symbol line-solid-green"></div>
+                    <div>行政区域边界</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="note">
+            <h4>位置信息</h4>
+            <p><strong>泉州经济技术开发区卫生服务中心</strong></p>
+            <p>地址：福建省泉州市经济技术开发区</p>
+            <p>服务内容：提供基本医疗、预防保健、健康教育等公共卫生服务</p>
+        </div>
+    </div>
+
+    <div class="footer">
+        泉州经济技术开发区卫生服务中心位置示意图 | 基于高德地图API
+    </div>
+
+    <!--引入高德地图JSAPI -->
+    <script type="text/javascript" src="https://webapi.amap.com/maps?v=1.4.15&key=98a9b1aede875554fc1957f1026b327a"></script>
+    <!--引入DistrictExplorer插件-->
+    <script src="https://webapi.amap.com/ui/1.1/main.js"></script>
+    <script type="text/javascript">
+        // 初始化地图
+        function initMap() {
+            // 创建地图实例
+            var map = new AMap.Map('container', {
+                zoom: 11, // 调整缩放级别以更好地显示区域
+                center: [118.587, 24.801], // 设置地图中心点坐标
+                mapStyle: 'amap://styles/normal' // 设置地图样式
+            });
+
+            // 添加地图插件
+            AMap.plugin([
+                'AMap.ToolBar',
+                'AMap.Scale',
+                'AMap.OverView'
+            ], function(){
+                // 在图面添加工具条
+                map.addControl(new AMap.ToolBar());
+
+                // 在图面添加比例尺
+                map.addControl(new AMap.Scale());
+
+                // 在图面添加鹰眼
+                map.addControl(new AMap.OverView({isOpen:true}));
+            });
+
+            // 添加标记点
+            var marker = new AMap.Marker({
+                position: new AMap.LngLat(118.587, 24.801), // 经纬度对象
+                title: '泉州经济技术开发区卫生服务中心',
+                icon: '//a.amap.com/jsapi_demos/static/demo-center/icons/poi-marker-default.png',
+                offset: new AMap.Pixel(-13, -30)
+            });
+
+            // 添加标记点到地图
+            marker.setMap(map);
+
+            // 添加信息窗口
+            var infoWindow = new AMap.InfoWindow({
+                content: '<div style="padding: 5px;">' +
+                         '<h4 style="margin: 0;">泉州经济技术开发区卫生服务中心</h4>' +
+                         '<p style="margin: 5px 0;">地址：福建省泉州市经济技术开发区</p>' +
+                         '<p style="margin: 5px 0;">服务时间：8:00-18:00</p>' +
+                         '</div>',
+                offset: new AMap.Pixel(0, -30)
+            });
+
+            // 绑定点击事件
+            marker.on('click', function() {
+                infoWindow.open(map, marker.getPosition());
+            });
+
+            // 默认打开信息窗口
+            infoWindow.open(map, marker.getPosition());
+
+            // 加载DistrictExplorer插件
+            AMapUI.load(['ui/geo/DistrictExplorer'], function(DistrictExplorer) {
+                // 创建行政区划浏览对象
+                var districtExplorer = new DistrictExplorer({
+                    eventSupport: true, // 打开事件支持
+                    map: map
+                });
+                
+                // 搜索并绘制晋江市
+                districtExplorer.loadAreaNodeByName('晋江市', function(error, areaNode) {
+                    console.log('加载晋江市结果:', error, areaNode);
+                    if (error) {
+                        console.error('加载晋江市失败:', error);
+                        return;
+                    }
+                    
+                    if (!areaNode) {
+                        console.error('未找到晋江市区域数据');
+                        return;
+                    }
+                    
+                    // 获取区域信息
+                    var adcode = areaNode.getAdcode();
+                    var name = areaNode.getName();
+                    console.log('区域信息:', adcode, name);
+                    
+                    // 渲染区域
+                    districtExplorer.setAreaNodesForCurrentZoom([areaNode]);
+                    districtExplorer.renderAreaPolygons();
+                    
+                    // 高亮显示晋江市
+                    districtExplorer.setFillOpacity(0.2);
+                    districtExplorer.setStrokeWeight(2);
+                    districtExplorer.setStrokeColor('#32CD32');
+                    districtExplorer.setFillColor('#32CD32');
+                });
+            });
+        }
+
+        // 页面加载完成后初始化地图
+        window.onload = function() {
+            initMap();
+        };
+    </script>
+</body>
+</html>
