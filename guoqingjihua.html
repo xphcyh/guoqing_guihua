@@ -107,6 +107,26 @@
             color: #666;
             font-size: 0.9em;
         }
+        .schedule-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+        .schedule-table th, .schedule-table td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        .schedule-table th {
+            background-color: #f2f2f2;
+        }
+        .template-section {
+            background: #fff3e0;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            border-left: 4px solid #ff9800;
+        }
         @media (max-width: 600px) {
             body {
                 padding: 10px;
@@ -124,258 +144,796 @@
         <div class="subtitle">厦门市双十中学思明分校 初一年段</div>
     </div>
 
+    <div class="template-section">
+        <h3>每日作息参考模板</h3>
+        <table class="schedule-table">
+            <tr>
+                <th>时间段</th>
+                <th>内容</th>
+            </tr>
+            <tr>
+                <td>7:00-7:30</td>
+                <td>起床 + 洗漱</td>
+            </tr>
+            <tr>
+                <td>7:30-8:00</td>
+                <td>早餐</td>
+            </tr>
+            <tr>
+                <td>8:00-9:00</td>
+                <td>学习/作业（上午第一段）</td>
+            </tr>
+            <tr>
+                <td>9:00-10:00</td>
+                <td>学习/作业（第二段）</td>
+            </tr>
+            <tr>
+                <td>10:00-10:30</td>
+                <td>休息 / 零食 / 游戏（短时）</td>
+            </tr>
+            <tr>
+                <td>10:30-11:30</td>
+                <td>学习/作业（第三段）</td>
+            </tr>
+            <tr>
+                <td>11:30-12:30</td>
+                <td>午餐 + 休息</td>
+            </tr>
+            <tr>
+                <td>12:30-13:30</td>
+                <td>自由活动 / 游戏 / 出游准备</td>
+            </tr>
+            <tr>
+                <td>13:30-14:30</td>
+                <td>运动 / 户外活动</td>
+            </tr>
+            <tr>
+                <td>14:30-15:30</td>
+                <td>学习/作业（第四段）</td>
+            </tr>
+            <tr>
+                <td>15:30-16:00</td>
+                <td>休息 / 喝水 / 小憩</td>
+            </tr>
+            <tr>
+                <td>16:00-17:00</td>
+                <td>学习/作业（第五段）</td>
+            </tr>
+            <tr>
+                <td>17:00-18:00</td>
+                <td>运动 / 散步 / 游戏</td>
+            </tr>
+            <tr>
+                <td>18:00-19:00</td>
+                <td>晚餐</td>
+            </tr>
+            <tr>
+                <td>19:00-20:00</td>
+                <td>自由时间（游戏、阅读、视频）</td>
+            </tr>
+            <tr>
+                <td>20:00-21:00</td>
+                <td>复习或完成当天任务</td>
+            </tr>
+            <tr>
+                <td>21:00-21:30</td>
+                <td>洗漱、准备睡觉</td>
+            </tr>
+            <tr>
+                <td>21:30</td>
+                <td>睡觉</td>
+            </tr>
+        </table>
+        <div class="note">
+            <strong>注意：</strong>实际执行中可根据当天行程灵活调整，但需确保核心任务完成。
+        </div>
+    </div>
+
     <div class="day-card">
         <div class="day-header">
             <div class="date">10月1日 (星期三)</div>
-            <div class="day-name">假期第一天</div>
+            <div class="day-name">厦门本地 · 国庆首日</div>
         </div>
         
         <div class="task-category">
-            <div class="category-title">学习任务 (总计约3小时)</div>
-            <div class="task-item">上午: 完成实践项目之一 (制作细胞模型 或 地球仪模型) - 1.5小时</div>
-            <div class="task-item">下午: 制作中秋节主题手绘书签 - 1小时</div>
-            <div class="task-item">晚上: 阅读《西游记》相关章节，构思小报内容 - 0.5小时</div>
+            <div class="category-title">重点任务</div>
+            <div class="task-item">完成"家国情怀"主题阅读练习</div>
+            <div class="task-item">第一册数学校本练习</div>
         </div>
         
         <div class="task-category">
-            <div class="category-title">实践活动</div>
-            <div class="task-item">全天: 制作实践项目 (细胞模型或地球仪) 及拍照记录</div>
-        </div>
-        
-        <div class="task-category">
-            <div class="category-title">休闲娱乐</div>
-            <div class="task-item">平板游戏时间 - 1小时</div>
-            <div class="task-item">户外活动/运动 - 1小时</div>
+            <div class="category-title">详细时间安排</div>
+            <table class="schedule-table">
+                <tr>
+                    <th>时间</th>
+                    <th>安排</th>
+                </tr>
+                <tr>
+                    <td>8:00-9:00</td>
+                    <td>数学：第1-10页巩固整理</td>
+                </tr>
+                <tr>
+                    <td>9:00-10:00</td>
+                    <td>语文：完成"家国情怀"阅读练习</td>
+                </tr>
+                <tr>
+                    <td>10:00-10:30</td>
+                    <td>休息</td>
+                </tr>
+                <tr>
+                    <td>10:30-11:30</td>
+                    <td>英语：背诵复习1-2课本作业词汇</td>
+                </tr>
+                <tr>
+                    <td>11:30-12:30</td>
+                    <td>午餐</td>
+                </tr>
+                <tr>
+                    <td>12:30-13:30</td>
+                    <td>游戏（1小时）</td>
+                </tr>
+                <tr>
+                    <td>13:30-14:30</td>
+                    <td>运动（跳绳/慢跑）</td>
+                </tr>
+                <tr>
+                    <td>14:30-15:30</td>
+                    <td>生物：细胞模型制作准备（材料采购/构思）</td>
+                </tr>
+                <tr>
+                    <td>15:30-16:00</td>
+                    <td>休息</td>
+                </tr>
+                <tr>
+                    <td>16:00-17:00</td>
+                    <td>历史：背诵P1-3内容</td>
+                </tr>
+                <tr>
+                    <td>17:00-18:00</td>
+                    <td>体育：A3校本作业1</td>
+                </tr>
+                <tr>
+                    <td>18:00-19:00</td>
+                    <td>晚餐</td>
+                </tr>
+                <tr>
+                    <td>19:00-20:00</td>
+                    <td>游戏（1小时）</td>
+                </tr>
+                <tr>
+                    <td>20:00-21:00</td>
+                    <td>总结今日任务，预习明日</td>
+                </tr>
+            </table>
         </div>
         
         <div class="travel-note">
-            <strong>备注:</strong> 今天是假期第一天，重点完成实践项目制作。建议选择制作地球仪模型，因为材料相对简单易得。
+            <strong>出游建议：</strong>下午可去鼓浪屿或中山路步行街（提前预约船票）
         </div>
     </div>
     
     <div class="day-card">
         <div class="day-header">
             <div class="date">10月2日 (星期四)</div>
-            <div class="day-name">看牙+回泉州老家</div>
+            <div class="day-name">看牙 + 回老家（泉州安溪）</div>
         </div>
         
         <div class="task-category">
-            <div class="category-title">学习任务 (总计约3小时)</div>
-            <div class="task-item">上午: <span class="highlight">看牙前</span> 完成语文"悦家国情怀"阅读练习 - 0.5小时</div>
-            <div class="task-item">下午: 在泉州老家完成数学第3-10页订正及错题整理 - 1小时</div>
-            <div class="task-item">晚上: 完成英语"国庆作业一" - 1.5小时</div>
+            <div class="category-title">重点任务</div>
+            <div class="task-item">完成国庆作业一（语文、历史、地理）</div>
         </div>
         
         <div class="task-category">
-            <div class="category-title">行程安排</div>
-            <div class="task-item">上午: 看牙医</div>
-            <div class="task-item">中午: 午餐后前往泉州安溪老家</div>
-            <div class="task-item">晚上: 抵达泉州老家</div>
-        </div>
-        
-        <div class="task-category">
-            <div class="category-title">休闲娱乐</div>
-            <div class="task-item">平板游戏时间 - 0.5小时</div>
-            <div class="task-item">在老家散步/适应环境 - 0.5小时</div>
+            <div class="category-title">详细时间安排</div>
+            <table class="schedule-table">
+                <tr>
+                    <th>时间</th>
+                    <th>安排</th>
+                </tr>
+                <tr>
+                    <td>7:30-8:00</td>
+                    <td>早餐</td>
+                </tr>
+                <tr>
+                    <td>8:00-9:00</td>
+                    <td>出发去医院看牙（建议早到）</td>
+                </tr>
+                <tr>
+                    <td>9:00-10:00</td>
+                    <td>看牙治疗</td>
+                </tr>
+                <tr>
+                    <td>10:00-11:00</td>
+                    <td>返回家中，简单休息</td>
+                </tr>
+                <tr>
+                    <td>11:00-12:00</td>
+                    <td>语文：手抄书签/中秋寄情（完成）</td>
+                </tr>
+                <tr>
+                    <td>12:00-13:00</td>
+                    <td>午餐</td>
+                </tr>
+                <tr>
+                    <td>13:00-14:00</td>
+                    <td>地理：制作地球仪模型（开始准备材料）</td>
+                </tr>
+                <tr>
+                    <td>14:00-15:00</td>
+                    <td>历史：国庆作业一（背诵+默写）</td>
+                </tr>
+                <tr>
+                    <td>15:00-16:00</td>
+                    <td>游戏（1小时）</td>
+                </tr>
+                <tr>
+                    <td>16:00-17:00</td>
+                    <td>运动（户外散步/骑车）</td>
+                </tr>
+                <tr>
+                    <td>17:00-18:00</td>
+                    <td>语文：创作《西游记》小报（草稿）</td>
+                </tr>
+                <tr>
+                    <td>18:00-19:00</td>
+                    <td>晚餐</td>
+                </tr>
+                <tr>
+                    <td>19:00-20:00</td>
+                    <td>游戏（1小时）</td>
+                </tr>
+                <tr>
+                    <td>20:00-21:00</td>
+                    <td>打包行李，准备出发安溪</td>
+                </tr>
+            </table>
         </div>
         
         <div class="travel-note">
-            <strong>出行提醒:</strong> 提前确认看牙时间，预留足够前往医院的时间。出发去泉州前检查行李是否齐全。
+            <strong>交通建议：</strong>18:30前从厦门北站或厦门站出发前往安溪（高铁/大巴），预计20:00抵达
         </div>
     </div>
     
     <div class="day-card">
         <div class="day-header">
             <div class="date">10月3日 (星期五)</div>
-            <div class="day-name">泉州老家</div>
+            <div class="day-name">泉州安溪 · 家乡时光</div>
         </div>
         
         <div class="task-category">
-            <div class="category-title">学习任务 (总计约3小时)</div>
-            <div class="task-item">上午: 完成数学第11-18页订正及错题整理 - 1小时</div>
-            <div class="task-item">下午: 完成英语"国庆作业二" - 1小时</div>
-            <div class="task-item">晚上: 完成生物LA练习一至二 - 1小时</div>
+            <div class="category-title">重点任务</div>
+            <div class="task-item">完成国庆作业二（语文、数学、英语）</div>
         </div>
         
         <div class="task-category">
-            <div class="category-title">休闲娱乐</div>
-            <div class="task-item">上午运动: 复习武术健身长拳 - 0.5小时</div>
-            <div class="task-item">平板游戏时间 - 1小时</div>
-        </div>
-        
-        <div class="task-category">
-            <div class="category-title">家庭活动</div>
-            <div class="task-item">下午: 与家人一起准备团圆饭</div>
+            <div class="category-title">详细时间安排</div>
+            <table class="schedule-table">
+                <tr>
+                    <th>时间</th>
+                    <th>安排</th>
+                </tr>
+                <tr>
+                    <td>8:00-9:00</td>
+                    <td>数学：第一册校本练习（11-18页）</td>
+                </tr>
+                <tr>
+                    <td>9:00-10:00</td>
+                    <td>语文：完成《西游记》小报（绘制+文字）</td>
+                </tr>
+                <tr>
+                    <td>10:00-10:30</td>
+                    <td>休息</td>
+                </tr>
+                <tr>
+                    <td>10:30-11:30</td>
+                    <td>英语：背诵复习1-4课课本作业</td>
+                </tr>
+                <tr>
+                    <td>11:30-12:30</td>
+                    <td>午餐</td>
+                </tr>
+                <tr>
+                    <td>12:30-13:30</td>
+                    <td>游戏（1小时）</td>
+                </tr>
+                <tr>
+                    <td>13:30-14:30</td>
+                    <td>运动（爬山/打羽毛球）</td>
+                </tr>
+                <tr>
+                    <td>14:30-15:30</td>
+                    <td>数学：A3校本作业2</td>
+                </tr>
+                <tr>
+                    <td>15:30-16:00</td>
+                    <td>休息</td>
+                </tr>
+                <tr>
+                    <td>16:00-17:00</td>
+                    <td>历史：背诵P4-6内容</td>
+                </tr>
+                <tr>
+                    <td>17:00-18:00</td>
+                    <td>体育：体能训练（跳绳/俯卧撑）</td>
+                </tr>
+                <tr>
+                    <td>18:00-19:00</td>
+                    <td>晚餐</td>
+                </tr>
+                <tr>
+                    <td>19:00-20:00</td>
+                    <td>游戏（1小时）</td>
+                </tr>
+                <tr>
+                    <td>20:00-21:00</td>
+                    <td>检查作业完成情况</td>
+                </tr>
+            </table>
         </div>
         
         <div class="travel-note">
-            <strong>建议:</strong> 可以利用在老家的机会，观察自然环境，为生物学习积累感性认识。
+            <strong>出游建议：</strong>上午可去清水岩景区（安溪著名景点），下午回家休息
         </div>
     </div>
     
     <div class="day-card">
         <div class="day-header">
             <div class="date">10月4日 (星期六)</div>
-            <div class="day-name">泉州老家</div>
+            <div class="day-name">安溪 · 继续学习</div>
         </div>
         
         <div class="task-category">
-            <div class="category-title">学习任务 (总计约3小时)</div>
-            <div class="task-item">上午: 完成语文"悦家国情怀"阅读练习 - 0.5小时</div>
-            <div class="task-item">上午: 完成数学A3校本"国庆作业1" - 1.5小时</div>
-            <div class="task-item">下午: 英语晨读口语训练 - 0.5小时</div>
-            <div class="task-item">下午: 背诵历史第3-4课"夯实基础"部分 - 0.5小时</div>
-            <div class="task-item">晚上: 完成《中国的历史》亲子共读活动 - 0.5小时</div>
+            <div class="category-title">重点任务</div>
+            <div class="task-item">完成国庆作业三（语文、数学、英语、物理）</div>
         </div>
         
         <div class="task-category">
-            <div class="category-title">休闲娱乐</div>
-            <div class="task-item">上午运动: 复习八段锦健身操 - 0.5小时</div>
-            <div class="task-item">平板游戏时间 - 1小时</div>
-        </div>
-        
-        <div class="task-category">
-            <div class="category-title">出游计划</div>
-            <div class="task-item">下午: 游览泉州清源山或开元寺 (根据天气情况)</div>
+            <div class="category-title">详细时间安排</div>
+            <table class="schedule-table">
+                <tr>
+                    <th>时间</th>
+                    <th>安排</th>
+                </tr>
+                <tr>
+                    <td>8:00-9:00</td>
+                    <td>语文：完成"中国的世界遗产"阅读</td>
+                </tr>
+                <tr>
+                    <td>9:00-10:00</td>
+                    <td>数学：第二册校本练习（1-10页）</td>
+                </tr>
+                <tr>
+                    <td>10:00-10:30</td>
+                    <td>休息</td>
+                </tr>
+                <tr>
+                    <td>10:30-11:30</td>
+                    <td>英语：背诵复习3-6课课本作业</td>
+                </tr>
+                <tr>
+                    <td>11:30-12:30</td>
+                    <td>午餐</td>
+                </tr>
+                <tr>
+                    <td>12:30-13:30</td>
+                    <td>游戏（1小时）</td>
+                </tr>
+                <tr>
+                    <td>13:30-14:30</td>
+                    <td>运动（骑行/打篮球）</td>
+                </tr>
+                <tr>
+                    <td>14:30-15:30</td>
+                    <td>物理：A3校本作业1</td>
+                </tr>
+                <tr>
+                    <td>15:30-16:00</td>
+                    <td>休息</td>
+                </tr>
+                <tr>
+                    <td>16:00-17:00</td>
+                    <td>历史：完成"中国的世界遗产"笔记</td>
+                </tr>
+                <tr>
+                    <td>17:00-18:00</td>
+                    <td>体育：体能训练（仰卧起坐）</td>
+                </tr>
+                <tr>
+                    <td>18:00-19:00</td>
+                    <td>晚餐</td>
+                </tr>
+                <tr>
+                    <td>19:00-20:00</td>
+                    <td>游戏（1小时）</td>
+                </tr>
+                <tr>
+                    <td>20:00-21:00</td>
+                    <td>复习当日内容</td>
+                </tr>
+            </table>
         </div>
         
         <div class="travel-note">
-            <strong>出游建议:</strong> 泉州清源山和开元寺都是历史文化名胜，既能放松心情，又能增长历史知识，符合假期学习主题。
+            <strong>出游建议：</strong>下午可去安溪茶都了解茶叶文化，体验采茶（若有空）
         </div>
     </div>
     
     <div class="day-card">
         <div class="day-header">
             <div class="date">10月5日 (星期日)</div>
-            <div class="day-name">泉州老家</div>
+            <div class="day-name">安溪 · 放松+学习</div>
         </div>
         
         <div class="task-category">
-            <div class="category-title">学习任务 (总计约3小时)</div>
-            <div class="task-item">上午: 完成数学A3校本"作业2" - 1.5小时</div>
-            <div class="task-item">下午: 英语晨读口语训练 - 0.5小时</div>
-            <div class="task-item">下午: 背诵历史第5-6课"夯实基础"部分 - 0.5小时</div>
-            <div class="task-item">晚上: 继续完善《西游记》小报设计 - 1小时</div>
+            <div class="category-title">重点任务</div>
+            <div class="task-item">完成语文作文 + 数学拓展训练</div>
         </div>
         
         <div class="task-category">
-            <div class="category-title">休闲娱乐</div>
-            <div class="task-item">平板游戏时间 - 1小时</div>
-        </div>
-        
-        <div class="task-category">
-            <div class="category-title">运动健身</div>
-            <div class="task-item">下午: 爬山或徒步锻炼不少于2公里 - 1小时</div>
-        </div>
-        
-        <div class="task-category">
-            <div class="category-title">出游计划</div>
-            <div class="task-item">下午: 前往安溪茶庄园体验茶文化 (结合"文明出行"主题)</div>
+            <div class="category-title">详细时间安排</div>
+            <table class="schedule-table">
+                <tr>
+                    <th>时间</th>
+                    <th>安排</th>
+                </tr>
+                <tr>
+                    <td>8:00-9:00</td>
+                    <td>语文：完成"中国的世界遗产"作文（300字）</td>
+                </tr>
+                <tr>
+                    <td>9:00-10:00</td>
+                    <td>数学：拓展训练（应用题）</td>
+                </tr>
+                <tr>
+                    <td>10:00-10:30</td>
+                    <td>休息</td>
+                </tr>
+                <tr>
+                    <td>10:30-11:30</td>
+                    <td>英语：背诵复习3-6课课本作业</td>
+                </tr>
+                <tr>
+                    <td>11:30-12:30</td>
+                    <td>午餐</td>
+                </tr>
+                <tr>
+                    <td>12:30-13:30</td>
+                    <td>游戏（1小时）</td>
+                </tr>
+                <tr>
+                    <td>13:30-14:30</td>
+                    <td>运动（爬山/徒步）</td>
+                </tr>
+                <tr>
+                    <td>14:30-15:30</td>
+                    <td>历史：背诵P7-9内容</td>
+                </tr>
+                <tr>
+                    <td>15:30-16:00</td>
+                    <td>休息</td>
+                </tr>
+                <tr>
+                    <td>16:00-17:00</td>
+                    <td>数学：A3校本作业2</td>
+                </tr>
+                <tr>
+                    <td>17:00-18:00</td>
+                    <td>体育：体能训练（跳绳）</td>
+                </tr>
+                <tr>
+                    <td>18:00-19:00</td>
+                    <td>晚餐</td>
+                </tr>
+                <tr>
+                    <td>19:00-20:00</td>
+                    <td>游戏（1小时）</td>
+                </tr>
+                <tr>
+                    <td>20:00-21:00</td>
+                    <td>复习本周内容</td>
+                </tr>
+            </table>
         </div>
         
         <div class="travel-note">
-            <strong>文化体验:</strong> 安溪是中国乌龙茶之乡，参观茶园既能体验传统文化，又能完成"文明出行"的实践要求。
+            <strong>出游建议：</strong>全天可安排安溪湖头古镇一日游（文化+自然风光）
         </div>
     </div>
     
     <div class="day-card">
         <div class="day-header">
             <div class="date">10月6日 (星期一)</div>
-            <div class="day-name">泉州老家</div>
+            <div class="day-name">安溪 · 休闲+准备返程</div>
         </div>
         
         <div class="task-category">
-            <div class="category-title">学习任务 (总计约3小时)</div>
-            <div class="task-item">上午: 完成第二册数学校本第9-18页订正及错题整理 - 1小时</div>
-            <div class="task-item">下午: 完成《西游记》主题小报制作 - 2小时</div>
+            <div class="category-title">重点任务</div>
+            <div class="task-item">完成"劳动"项目（做菜vlog）+ 复习总结</div>
         </div>
         
         <div class="task-category">
-            <div class="category-title">运动健身</div>
-            <div class="task-item">下午: 跳绳练习 (3组1分钟计时跳) - 0.5小时</div>
+            <div class="category-title">详细时间安排</div>
+            <table class="schedule-table">
+                <tr>
+                    <th>时间</th>
+                    <th>安排</th>
+                </tr>
+                <tr>
+                    <td>8:00-9:00</td>
+                    <td>劳动：和家人一起做饭（记录过程）</td>
+                </tr>
+                <tr>
+                    <td>9:00-10:00</td>
+                    <td>制作vlog（拍摄+剪辑）</td>
+                </tr>
+                <tr>
+                    <td>10:00-10:30</td>
+                    <td>休息</td>
+                </tr>
+                <tr>
+                    <td>10:30-11:30</td>
+                    <td>数学：第二册校本练习（11-20页）</td>
+                </tr>
+                <tr>
+                    <td>11:30-12:30</td>
+                    <td>午餐</td>
+                </tr>
+                <tr>
+                    <td>12:30-13:30</td>
+                    <td>游戏（1小时）</td>
+                </tr>
+                <tr>
+                    <td>13:30-14:30</td>
+                    <td>运动（打羽毛球）</td>
+                </tr>
+                <tr>
+                    <td>14:30-15:30</td>
+                    <td>历史：复习全周内容</td>
+                </tr>
+                <tr>
+                    <td>15:30-16:00</td>
+                    <td>休息</td>
+                </tr>
+                <tr>
+                    <td>16:00-17:00</td>
+                    <td>英语：背诵复习5-8课课本作业</td>
+                </tr>
+                <tr>
+                    <td>17:00-18:00</td>
+                    <td>语文：检查小报是否完成</td>
+                </tr>
+                <tr>
+                    <td>18:00-19:00</td>
+                    <td>晚餐</td>
+                </tr>
+                <tr>
+                    <td>19:00-20:00</td>
+                    <td>游戏（1小时）</td>
+                </tr>
+                <tr>
+                    <td>20:00-21:00</td>
+                    <td>整理行李，准备第二天返程</td>
+                </tr>
+            </table>
         </div>
         
-        <div class="task-category">
-            <div class="category-title">休闲娱乐</div>
-            <div class="task-item">平板游戏时间 - 1小时</div>
-            <div class="task-item">晚上: 家庭观影时间</div>
-        </div>
-        
-        <div class="task-category">
-            <div class="category-title">家庭活动</div>
-            <div class="task-item">上午: 协助家人准备中秋团圆饭</div>
+        <div class="travel-note">
+            <strong>出游建议：</strong>下午可去安溪文庙参观，感受传统文化
         </div>
     </div>
     
     <div class="day-card">
         <div class="day-header">
             <div class="date">10月7日 (星期二)</div>
-            <div class="day-name">返程+接机</div>
+            <div class="day-name">返程泉州 → 接妈妈（晋江机场）</div>
         </div>
         
         <div class="task-category">
-            <div class="category-title">学习任务 (总计约2小时)</div>
-            <div class="task-item">上午: 整理所有数学作业，查漏补缺 - 1.5小时</div>
-            <div class="task-item">下午: <span class="highlight">接机前</span> 对照仪容仪表规范进行自查 - 0.5小时</div>
+            <div class="category-title">重点任务</div>
+            <div class="task-item">完成"劳动"项目提交 + 体育测试准备</div>
         </div>
         
         <div class="task-category">
-            <div class="category-title">行程安排</div>
-            <div class="task-item">上午: 整理行李，准备返程</div>
-            <div class="task-item">中午: 从泉州安溪出发前往晋江机场</div>
-            <div class="task-item">下午 13:00: <span class="highlight">晋江机场接孩子妈妈</span></div>
-            <div class="task-item">下午: 从晋江机场返回厦门</div>
+            <div class="category-title">详细时间安排</div>
+            <table class="schedule-table">
+                <tr>
+                    <th>时间</th>
+                    <th>安排</th>
+                </tr>
+                <tr>
+                    <td>7:00-7:30</td>
+                    <td>起床洗漱</td>
+                </tr>
+                <tr>
+                    <td>7:30-8:00</td>
+                    <td>早餐</td>
+                </tr>
+                <tr>
+                    <td>8:00-9:00</td>
+                    <td>语文：提交"劳动"vlog（上传平台）</td>
+                </tr>
+                <tr>
+                    <td>9:00-10:00</td>
+                    <td>数学：第二册校本练习（21-30页）</td>
+                </tr>
+                <tr>
+                    <td>10:00-10:30</td>
+                    <td>休息</td>
+                </tr>
+                <tr>
+                    <td>10:30-11:30</td>
+                    <td>体育：跳绳训练（3分钟测试）</td>
+                </tr>
+                <tr>
+                    <td>11:30-12:30</td>
+                    <td>午餐</td>
+                </tr>
+                <tr>
+                    <td>12:30-13:30</td>
+                    <td>出发前往晋江机场（建议12:30前出发）</td>
+                </tr>
+                <tr>
+                    <td>13:00-14:00</td>
+                    <td>在机场等待接人（可看书/玩游戏）</td>
+                </tr>
+                <tr>
+                    <td>14:00-15:00</td>
+                    <td>接妈妈，返回安溪/厦门</td>
+                </tr>
+                <tr>
+                    <td>15:00-16:00</td>
+                    <td>休息/喝水</td>
+                </tr>
+                <tr>
+                    <td>16:00-17:00</td>
+                    <td>英语：背诵复习5-8课课本作业</td>
+                </tr>
+                <tr>
+                    <td>17:00-18:00</td>
+                    <td>运动（散步）</td>
+                </tr>
+                <tr>
+                    <td>18:00-19:00</td>
+                    <td>晚餐</td>
+                </tr>
+                <tr>
+                    <td>19:00-20:00</td>
+                    <td>游戏（1小时）</td>
+                </tr>
+                <tr>
+                    <td>20:00-21:00</td>
+                    <td>复习本周所有作业</td>
+                </tr>
+            </table>
         </div>
         
-        <div class="task-category">
-            <div class="category-title">休闲娱乐</div>
-            <div class="task-item">平板游戏时间 - 0.5小时</div>
-        </div>
-        
-        <div class="travel-note">
-            <strong>出行提醒:</strong> 提前规划从安溪到晋江机场的路线，预留充足时间，避免堵车影响接机。
+        <div class="note">
+            <strong>注意：</strong>若接完妈妈后直接回厦门，建议当晚在厦门住宿，避免第二天赶车
         </div>
     </div>
     
     <div class="day-card">
         <div class="day-header">
             <div class="date">10月8日 (星期三)</div>
-            <div class="day-name">返程准备日</div>
+            <div class="day-name">返厦 + 最后收尾</div>
         </div>
         
         <div class="task-category">
-            <div class="category-title">学习任务 (总计约3小时)</div>
-            <div class="task-item">上午: 检查所有作业完成情况，补缺补漏 - 1.5小时</div>
-            <div class="task-item">下午: 整理实践项目照片和说明材料 - 1小时</div>
-            <div class="task-item">下午: 最终检查所有作业和实践项目 - 0.5小时</div>
+            <div class="category-title">重点任务</div>
+            <div class="task-item">完成"整理作业" + 为开学准备</div>
         </div>
         
         <div class="task-category">
-            <div class="category-title">准备活动</div>
-            <div class="task-item">调整作息时间，准备10月9日开学</div>
-            <div class="task-item">整理书包，确保所有作业和项目都已准备就绪</div>
+            <div class="category-title">详细时间安排</div>
+            <table class="schedule-table">
+                <tr>
+                    <th>时间</th>
+                    <th>安排</th>
+                </tr>
+                <tr>
+                    <td>7:00-7:30</td>
+                    <td>起床洗漱</td>
+                </tr>
+                <tr>
+                    <td>7:30-8:00</td>
+                    <td>早餐</td>
+                </tr>
+                <tr>
+                    <td>8:00-9:00</td>
+                    <td>整理所有作业（拍照/打包）</td>
+                </tr>
+                <tr>
+                    <td>9:00-10:00</td>
+                    <td>数学：第二册校本练习（31-40页）</td>
+                </tr>
+                <tr>
+                    <td>10:00-10:30</td>
+                    <td>休息</td>
+                </tr>
+                <tr>
+                    <td>10:30-11:30</td>
+                    <td>英语：背诵复习9-12课课本作业</td>
+                </tr>
+                <tr>
+                    <td>11:30-12:30</td>
+                    <td>午餐</td>
+                </tr>
+                <tr>
+                    <td>12:30-13:30</td>
+                    <td>游戏（1小时）</td>
+                </tr>
+                <tr>
+                    <td>13:30-14:30</td>
+                    <td>运动（打篮球）</td>
+                </tr>
+                <tr>
+                    <td>14:30-15:30</td>
+                    <td>历史：复习P10-12内容</td>
+                </tr>
+                <tr>
+                    <td>15:30-16:00</td>
+                    <td>休息</td>
+                </tr>
+                <tr>
+                    <td>16:00-17:00</td>
+                    <td>语文：检查所有作业是否完成</td>
+                </tr>
+                <tr>
+                    <td>17:00-18:00</td>
+                    <td>体育：体能训练（综合）</td>
+                </tr>
+                <tr>
+                    <td>18:00-19:00</td>
+                    <td>晚餐</td>
+                </tr>
+                <tr>
+                    <td>19:00-20:00</td>
+                    <td>游戏（1小时）</td>
+                </tr>
+                <tr>
+                    <td>20:00-21:00</td>
+                    <td>整理书包，准备明天上学</td>
+                </tr>
+            </table>
         </div>
         
-        <div class="task-category">
-            <div class="category-title">休闲娱乐</div>
-            <div class="task-item">平板游戏时间 - 1小时</div>
-            <div class="task-item">轻松阅读或听音乐</div>
-        </div>
-        
-        <div class="note">
-            <strong>重要提醒:</strong> 所有作业于10月9日(星期三)返校时上交，请务必在今天完成所有检查和准备工作。
+        <div class="travel-note">
+            <strong>出游建议：</strong>若时间允许，可去集美学村或南普陀寺走走，轻松收假
         </div>
     </div>
     
     <div class="note">
-        <strong>总体安排说明:</strong>
-        <ul>
-            <li>每日保证至少3小时学习时间，完成相应作业任务</li>
-            <li>平板游戏时间每日1-2小时，灵活安排在完成学习任务后</li>
-            <li>运动时间每日1小时，结合武术、跳绳、徒步等多种形式</li>
-            <li>结合在泉州的行程，安排了清源山、开元寺、安溪茶庄园等文化体验活动</li>
-            <li>充分考虑了10月2日看牙和10月7日接机的特殊安排</li>
-        </ul>
+        <h3>总结与提醒</h3>
+        <table class="schedule-table">
+            <tr>
+                <th>类别</th>
+                <th>内容</th>
+            </tr>
+            <tr>
+                <td>✅ 学习任务</td>
+                <td>全部完成，每日≥3小时</td>
+            </tr>
+            <tr>
+                <td>✅ 游戏时间</td>
+                <td>每日1-2小时，合理安排</td>
+            </tr>
+            <tr>
+                <td>✅ 运动时间</td>
+                <td>每日1小时，形式多样</td>
+            </tr>
+            <tr>
+                <td>✅ 出行安排</td>
+                <td>合理穿插，兼顾家庭与学习</td>
+            </tr>
+            <tr>
+                <td>✅ 特殊事项</td>
+                <td>10月2日看牙、10月7日接妈妈已安排妥当</td>
+            </tr>
+            <tr>
+                <td>🔁 可调整项</td>
+                <td>若某天任务多，可延至次日补，但尽量完成</td>
+            </tr>
+        </table>
     </div>
     
     <div class="footer">
